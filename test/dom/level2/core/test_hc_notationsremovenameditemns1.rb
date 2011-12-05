@@ -21,7 +21,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# An attempt to add remove an notation using removeNamedItemNS should result in 
+# An attempt to add remove an notation using removeNamedItemNS should result in
 # a NO_MODIFICATION_ERR or a NOT_FOUND_ERR.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Core/core#ID-D46829EF]
@@ -53,32 +53,32 @@ DOMTestCase('hc_notationsremovenameditemns1') do
     retval = nil
     doc = load_document("hc_staff", true)
       docType = doc.doctype()
-      
+
       if (
     !(("text/html" == getContentType()))
 )
         assert_not_nil(docType, "docTypeNotNull")
       notations = docType.notations()
       assert_not_nil(notations, "notationsNotNull")
-      
+
       begin
-      
+
       fail("throw_NO_MOD_OR_NOT_FOUND_ERR")
      rescue DOMException => ex
            case ex.code
-      when 7 : 
+      when 7
        # break;
-      when 8 : 
+      when 8
        # break;
           else
           raise ex
           end
-        
+
       end # end begin
-      
+
 
          end
-       
+
   end
 
   ###

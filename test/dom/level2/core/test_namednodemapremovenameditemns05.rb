@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001-2004 World Wide Web Consortium, 
+Copyright (c) 2001-2004 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -24,7 +24,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-#  Retreive an entity and notation node and remove the first notation from the 
+#  Retreive an entity and notation node and remove the first notation from the
 #  entity node map and first entity node from the notation map.  Since both these
 #  maps are readonly, a NO_MODIFICATION_ALLOWED_ERR should be raised.
 # @author IBM
@@ -43,7 +43,7 @@ DOMTestCase('namednodemapremovenameditemns05') do
   ##
   def setup
 =begin
-      org.w3c.domts.DocumentBuilderSetting[] settings = 
+      org.w3c.domts.DocumentBuilderSetting[] settings =
           new org.w3c.domts.DocumentBuilderSetting[] {
 org.w3c.domts.DocumentBuilderSetting.namespaceAware
         };
@@ -76,38 +76,38 @@ org.w3c.domts.DocumentBuilderSetting.namespaceAware
       assert_not_nil(entities, "entitiesNotNull")
       notations = docType.notations()
       assert_not_nil(notations, "notationsNotNull")
-      
+
       begin
-      
+
       fail("entity_throw_DOMException")
      rescue DOMException => ex
            case ex.code
-      when 8 : 
+      when 8
        # break;
-      when 7 : 
+      when 7
        # break;
           else
           raise ex
           end
-        
+
       end # end begin
-      
+
 
       begin
-      
+
       fail("notation_throw_DOMException")
      rescue DOMException => ex
            case ex.code
-      when 8 : 
+      when 8
        # break;
-      when 7 : 
+      when 7
        # break;
           else
           raise ex
           end
-        
+
       end # end begin
-      
+
 
   end
 

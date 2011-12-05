@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001 World Wide Web Consortium, 
+Copyright (c) 2001 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -24,7 +24,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# Two listeners are registered on the same target, each of which will remove both itself and 
+# Two listeners are registered on the same target, each of which will remove both itself and
 # the other on the first event.  Only one should see the event since event listeners
 # can never be invoked after being removed.
 # @author Curt Arnold
@@ -46,29 +46,29 @@ DOMTestCase('dispatchEvent13') do
     preload(contentType, "hc_staff", true)
   end
 
-     ###
-     #    Inner class implementation for variable listener1 
-     ##
-      private static class EventListenerid2369202
-           extends org.w3c.domts.DOMTestInnerClass 
-           implements EventListener {
-        ###
-        # local copy of variable specified in value parameter
-        ##
-        private java.util.List events;
-         ###
-        # local copy of variable specified in value parameter
-        ##
-        private java.util.List listeners;
-        ###
-        # Constructor
-        # @param test test case
-        # @param events Value from value attribute of nested var element
-        # @param listeners Value from value attribute of nested var element
-        ##
-        public EventListenerid2369202(DOMTestCase test, java.util.List events, java.util.List listeners) { 
-        super(test)
-           this.events = events;
-           this.listeners = listeners;
-           }
-   
+     # ###
+     # #    Inner class implementation for variable listener1
+     # ##
+      # private static class EventListenerid2369202
+           # extends org.w3c.domts.DOMTestInnerClass
+           # implements EventListener {
+        # ###
+        # # local copy of variable specified in value parameter
+        # ##
+        # private java.util.List events;
+         # ###
+        # # local copy of variable specified in value parameter
+        # ##
+        # private java.util.List listeners;
+        # ###
+        # # Constructor
+        # # @param test test case
+        # # @param events Value from value attribute of nested var element
+        # # @param listeners Value from value attribute of nested var element
+        # ##
+        # public EventListenerid2369202(DOMTestCase test, java.util.List events, java.util.List listeners) {
+        # super(test)
+           # this.events = events;
+           # this.listeners = listeners;
+           # }
+end

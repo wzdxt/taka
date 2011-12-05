@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001 World Wide Web Consortium, 
+Copyright (c) 2001 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -24,7 +24,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# A document is created using implementation.createDocument and 
+# A document is created using implementation.createDocument and
 # cast to a DocumentEvent interface.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Events/events#Events-DocumentEvent]
@@ -52,7 +52,7 @@ DOMTestCase('DocumentEventCast01') do
     doc = nil
     docEvent = nil
     doc = load_document("hc_staff", true)
-      docEvent = (DocumentEvent)  doc
+      docEvent = (DocumentEvent)#  doc
   end
 
   ###

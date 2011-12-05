@@ -21,7 +21,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# An attempt to add an element to the named node map returned by notations should 
+# An attempt to add an element to the named node map returned by notations should
 # result in a NO_MODIFICATION_ERR or HIERARCHY_REQUEST_ERR.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Core/core#ID-D46829EF]
@@ -54,33 +54,33 @@ DOMTestCase('hc_notationssetnameditemns1') do
     elem = nil
     doc = load_document("hc_staff", true)
       docType = doc.doctype()
-      
+
       if (
     !(("text/html" == getContentType()))
 )
         assert_not_nil(docType, "docTypeNotNull")
       notations = docType.notations()
       assert_not_nil(notations, "notationsNotNull")
-      
-      
+
+
       begin
-      
+
       fail("throw_HIER_OR_NO_MOD_ERR")
      rescue DOMException => ex
            case ex.code
-      when 3 : 
+      when 3
        # break;
-      when 7 : 
+      when 7
        # break;
           else
           raise ex
           end
-        
+
       end # end begin
-      
+
 
          end
-       
+
   end
 
   ###

@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001-2004 World Wide Web Consortium, 
+Copyright (c) 2001-2004 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -25,7 +25,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'he
 
 ###
 #  The method setPrefix raises a INVALID_CHARACTER_ERR if the specified prefix contains an illegal character.
-#  Create a new namespace aware element node and call the setPrefix method on it with a prefix having 
+#  Create a new namespace aware element node and call the setPrefix method on it with a prefix having
 #  an invalid character.  Check if a NAMESPACE_ERR is thrown.
 # @author IBM
 # @author Neil Delima
@@ -52,18 +52,18 @@ DOMTestCase('nodesetprefix09') do
   #
   def test_nodesetprefix09
     doc = nil
-    value = "#$%&'()@";
+    value = "\#$%&'()@";
     element = nil
     doc = load_document("staffNS", true)
-      
-      
+
+
     begin
       success = false;
       begin
-        
+
       rescue Nokogiri::XML::DOMException => ex
         success = (ex.code == Nokogiri::XML::DOMException::INVALID_CHARACTER_ERR)
-      end 
+      end
       assert(success, "throw_INVALID_CHARACTER_ERR")
     end
 

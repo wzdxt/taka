@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001-2004 World Wide Web Consortium, 
+Copyright (c) 2001-2004 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -24,7 +24,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# An created but not initialized event is passed to EventTarget.dispatchEvent().  Should raise 
+# An created but not initialized event is passed to EventTarget.dispatchEvent().  Should raise
 # UNSPECIFIED_EVENT_TYPE_ERR EventException.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Events/events#Events-EventTarget-dispatchEvent]
@@ -38,9 +38,9 @@ DOMTestCase('dispatchEvent06') do
   # @throws org.w3c.domts.DOMTestIncompatibleException Thrown if test is not compatible with parser configuration
   ##
   def setup
-        if (factory.hasFeature("HTMLEvents", "2.0") != true)
-         raise 'org.w3c.domts.DOMTestIncompatibleException.incompatibleFeature("HTMLEvents", "2.0")'
-      end
+    if (factory.hasFeature("HTMLEvents", "2.0") != true)
+      raise 'org.w3c.domts.DOMTestIncompatibleException.incompatibleFeature("HTMLEvents", "2.0")'
+    end
 
     ##
     ##   check if loaded documents are supported for content type
@@ -59,17 +59,17 @@ DOMTestCase('dispatchEvent06') do
     evt = nil
     preventDefault = nil
     doc = load_document("hc_staff", true)
-      
-      
+
+
     begin
       success = false;
       begin
-        
+
       rescue EventException => ex
         success = (ex.code == EventException::UNSPECIFIED_EVENT_TYPE_ERR)
-      end 
+      end
       assert(success, "throw_UNSPECIFIED_EVENT_TYPE_ERR")
-    end 
+    end
 
   end
 

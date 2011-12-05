@@ -31,18 +31,19 @@ end
 # end
 
 
-namespace :test do
+task :test do
     # desc "run jquery tests"
     # task :jquery => 'vendor/jquery/jquery/dist/jquery.js' do
         # require 'test/jquery/test_jquery'
     # end
 
-    desc "run dom tests"
-    task :dom do
+    # desc "run dom tests"
+    # task :dom do
         Dir.glob('test/dom/**/*.rb').each do |file|
-            require file
+            next if file.include?( 'staff' )
+            require_relative file
         end
-    end
+    # end
 end
 
 # vim: syntax=Ruby

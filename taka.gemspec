@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'lib/taka'
+require 'lib/taka/version'
 
 Gem::Specification.new do |s|
 

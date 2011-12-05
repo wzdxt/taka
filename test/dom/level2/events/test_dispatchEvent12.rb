@@ -6,14 +6,14 @@
 =begin
 
 
-Copyright (c) 2001-2005 World Wide Web Consortium, 
+Copyright (c) 2001-2005 World Wide Web Consortium,
 (Massachusetts Institute of Technology, Institut National de
-Recherche en Informatique et en Automatique, Keio University).  All 
+Recherche en Informatique et en Automatique, Keio University).  All
 Rights Reserved.  This program is distributed under the W3C's Software
-Intellectual Property License.  This program is distributed in the 
+Intellectual Property License.  This program is distributed in the
 hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
-PURPOSE.  
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
 
 See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 
@@ -25,7 +25,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'he
 
 ###
 # A monitor is added, multiple calls to removeEventListener
-# are mde with similar but not identical arguments, and an event is dispatched.  
+# are mde with similar but not identical arguments, and an event is dispatched.
 # The monitor should recieve handleEvent calls.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Events/events#Events-EventTarget-dispatchEvent]
@@ -46,17 +46,17 @@ DOMTestCase('dispatchEvent12') do
     preload(contentType, "hc_staff", true)
   end
 
-     ###
-     #    Inner class implementation for variable other 
-     ##
-      private static class EventListenerid2310928
-           extends org.w3c.domts.DOMTestInnerClass 
-           implements EventListener {
-       ###
-        # Constructor
-        # @param test test case
-        ##
-        public EventListenerid2310928(DOMTestCase test) { 
-        super(test)
-           }
-   
+     # ###
+     # #    Inner class implementation for variable other
+     # ##
+      # private static class EventListenerid2310928
+           # extends org.w3c.domts.DOMTestInnerClass
+           # implements EventListener {
+       # ###
+        # # Constructor
+        # # @param test test case
+        # ##
+        # public EventListenerid2310928(DOMTestCase test) {
+        # super(test)
+           # }
+end

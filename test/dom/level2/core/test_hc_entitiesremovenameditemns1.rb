@@ -21,7 +21,7 @@ See W3C License http://www.w3.org/Consortium/Legal/ for more details.
 require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'helper'))
 
 ###
-# An attempt to add remove an entity using removeNamedItemNS should result in 
+# An attempt to add remove an entity using removeNamedItemNS should result in
 # a NO_MODIFICATION_ERR or a NOT_FOUND_ERR.
 # @author Curt Arnold
 # see[http://www.w3.org/TR/DOM-Level-2-Core/core#ID-1788794630]
@@ -53,32 +53,32 @@ DOMTestCase('hc_entitiesremovenameditemns1') do
     retval = nil
     doc = load_document("hc_staff", true)
       docType = doc.doctype()
-      
+
       if (
     !(("text/html" == getContentType()))
 )
         assert_not_nil(docType, "docTypeNotNull")
       entities = docType.entities()
       assert_not_nil(entities, "entitiesNotNull")
-      
+
       begin
-      
+
       fail("throw_NO_MOD_OR_NOT_FOUND_ERR")
      rescue DOMException => ex
            case ex.code
-      when 7 : 
+      when 7
        # break;
-      when 8 : 
+      when 8
        # break;
           else
           raise ex
           end
-        
+
       end # end begin
-      
+
 
          end
-       
+
   end
 
   ###

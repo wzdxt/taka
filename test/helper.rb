@@ -11,12 +11,11 @@ $LOAD_PATH << ENV['JOHNSON_DEV'] if ENV['JOHNSON_DEV']
 require 'rubygems'
 require 'nokogiri'
 require 'taka'
-require 'johnson'
 
 module DOM
   class TestCase < Test::Unit::TestCase
     BASE = File.expand_path(File.dirname(__FILE__))
-    undef :default_test
+    undef :default_test if method_defined?( :default_test )
 
     # Default this to text/xml for now....
     def content_type
@@ -88,7 +87,8 @@ end
 
 def DOMTestCase(test_case_name, &block)
   klass = test_case_name.capitalize
-  raise "Already defined!" if Object.const_defined?(klass.to_sym)
+  # raise "Already defined!" if Object.const_defined?(klass.to_sym)
+  return if Object.const_defined?(klass.to_sym)
   test_klass = Class.new(DOM::TestCase, &block)
   Object.const_set(klass.to_sym, test_klass)
 end
@@ -108,8 +108,8 @@ module JQuery
   end
 
   class TestCase < Test::Unit::TestCase
-    undef :default_test
-  end  
+    undef :default_test if method_defined?( :default_test )
+  end
 
   class PoorMansFirebug
     def log *args
