@@ -17,6 +17,10 @@ module Taka
           inner_html
         end
 
+        def innerHTML=(html)
+          self.native_content = html
+        end
+
         def method_missing method, *args, &block
           attribute = method.to_s.downcase
           super unless key?(attribute)
