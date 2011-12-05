@@ -5,6 +5,7 @@
 * DOM::NodeList added:
   * length()
   * []()
+* Level 2 DOM tests
 
 === 0.0.1 / 2009-01-20
 
