@@ -5,6 +5,14 @@ module Taka
         @block = block
       end
 
+      def length
+        @block.call.send( :length )
+      end
+
+      def []( k )
+        item( k )
+      end
+
       def item(index)
         @block.call[index]
       end
