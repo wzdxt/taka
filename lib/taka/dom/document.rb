@@ -135,6 +135,7 @@ module Taka
       def decorate node
         nx = Nokogiri::XML
         list = {
+          nx::DocumentFragment => [DOM::Element, DOM::Node, DOM::DocumentFragment],
           nx::Node     => [DOM::Element, DOM::Node],
           nx::Element  => [DOM::Element, DOM::Node],
           nx::Attr     => [DOM::Element, DOM::Node, DOM::Attr],
@@ -145,10 +146,16 @@ module Taka
           nx::EntityDecl => [DOM::Element, DOM::Node, DOM::EntityDecl],
           nx::EntityReference => [DOM::Element, DOM::Node, DOM::EntityReference],
           nx::DTD     => [DOM::Element, DOM::Node, DOM::DTD],
-          nx::DocumentFragment => [DOM::Element, DOM::Node, DOM::DocumentFragment],
           nx::Comment => [DOM::Element, DOM::Node, DOM::Comment],
-          nx::Notation => [DOM::Element, DOM::Node, DOM::Notation],
+          nx::Notation => [DOM::Element, DOM::Node, DOM::Notation]
         }[node.class]
+
+        if !list
+            nx = Nokogiri::HTML
+            list = {
+              nx::DocumentFragment => [DOM::Element, DOM::Node, DOM::DocumentFragment]
+            }[node.class]
+        end
 
         raise("Unknown type #{node.class.name}") unless list
 
