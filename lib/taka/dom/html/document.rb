@@ -3,18 +3,22 @@ module Taka
     module HTML
       module Document
         def title
-          at('.//title').text
+            begin
+              at('.//title').text
+            rescue
+                ''
+            end
         end
 
         # Returns the URI of the page that linked to this page. The value is
         # an empty string if the user navigated to the page directly (not
-        # through a link, but, for example, via a bookmark). 
+        # through a link, but, for example, via a bookmark).
         def referrer
           ''
         end
 
         # The domain name of the server that served the document, or a null
-        # string if the server cannot be identified by a domain name. 
+        # string if the server cannot be identified by a domain name.
         def domain
           ''
         end
@@ -50,7 +54,7 @@ module Taka
         # The cookies associated with this document. If there are none, the
         # value is an empty string. Otherwise, the value is a string: a
         # semicolon-delimited list of "name, value" pairs for all the cookies
-        # associated with the page. For example, name=value;expires=date. 
+        # associated with the page. For example, name=value;expires=date.
         def cookie
           ''
         end
@@ -66,6 +70,7 @@ module Taka
         def write string
           @tmp_doc ||= ''
           @tmp_doc << string
+          close
         end
 
         def writeln string
@@ -75,8 +80,10 @@ module Taka
         def close
           @tmp_doc ||= nil
           return unless @tmp_doc
-          Nokogiri::HTML.fragment(@tmp_doc || '').each { |node|
-            document.add_child node
+
+          document.fragment(@tmp_doc || '').children.each {
+            |node|
+            document.at_css( 'body' ).add_next_sibling node
           }
           @tmp_doc = nil
         end
