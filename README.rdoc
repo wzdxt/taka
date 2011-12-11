@@ -2,7 +2,7 @@
 
 This repo is my updated version of Taka originally developed by {Aaron Patterson}[http://tenderlovemaking.com].
 
-It's only purpose is to help me out with my latest experiment over at
+Its only purpose is to help me out with my latest experiment over at
 {https://github.com/Zapotek/dom-js-experiment}[https://github.com/Zapotek/dom-js-experiment].
 
 = Taka
