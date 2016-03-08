@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
       s.extra_rdoc_files  = %w( README.rdoc CHANGELOG.rdoc )
       s.rdoc_options      = ["--charset=UTF-8"]
 
-      s.add_dependency "nokogiri",        "~> 1.5.0"
+      s.add_dependency "nokogiri",        "~> 1.6.0"
 
       s.description = <<description
       Taka is a DOM (core and html) implementation for ruby. This software is EXTREMELY experimental. You may hurt yourself while using it.
